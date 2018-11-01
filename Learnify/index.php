@@ -1,7 +1,9 @@
-<?php include("includes/header.php"); ?>
+<?php include("includes/header.php"); 
+
+// this is a comment
+?>
 
 <h1 class="pageHeadingBig">You Might Also Need</h1>
-
 
 <div class="gridViewContainer">
 
