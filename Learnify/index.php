@@ -8,7 +8,7 @@
 <div class="gridViewContainer">
 
 	<?php
-		$moduleQuery = mysqli_query($con, "SELECT * FROM Module ORDER BY RAND() LIMIT 10");
+		$moduleQuery = mysqli_query($con, "SELECT * FROM modules ORDER BY RAND() LIMIT 10");
 		
 		while($row = mysqli_fetch_array($moduleQuery)) {
 		
