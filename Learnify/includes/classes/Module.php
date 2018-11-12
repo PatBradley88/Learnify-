@@ -35,7 +35,7 @@
     }
     
     public function getArtworkPath() {
-      return $this->artowrkPath;
+      return $this->artworkPath;
     }
     
     public function getCourse() {
