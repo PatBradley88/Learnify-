@@ -1,6 +1,7 @@
 <?php 
 include("includes/config.php");
-
+include("includes/classes/Lecturer.php");
+include("includes/classes/Module.php");
 //session_destroy();
 
 if(isset($_SESSION['userLoggedIn'])){
