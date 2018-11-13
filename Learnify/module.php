@@ -27,11 +27,22 @@ $lecturer = $module->getLecturer();
 <div class="entityInfo">
    <div class="leftSection">
      <img src="./<?php echo $module->getArtworkPath(); ?>">
-     
-  </div>
-  <div class="rightSection">
     
   </div>
+  <div class="rightSection">
+    <h2>
+      <?php echo $module->getTitle(); ?>
+    </h2>
+    <p><?php echo $lecturer->getName(); ?></p>
+    <p><?php echo $module->getVideoCount(); ?> Videos</p>
+  </div>
+</div>
+
+<div class="lectureContainer">
+  <ul>
+    <li>dog</li>
+    <li>cat</li>
+  </ul>
 </div>
 
 

@@ -42,5 +42,10 @@
       return $this->course;
     }
     
+    public function getVideoCount() {
+      $query = mysqli_query($this->con, "SELECT id FROM lecture WHERE module='$this->id'");
+      return mysqli_num_rows($query);
+    }
+    
   }
 ?>
