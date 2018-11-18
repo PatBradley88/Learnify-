@@ -47,5 +47,21 @@
       return mysqli_num_rows($query);
     }
     
+    // create a list of all lecture IDs
+    public function getLectureIds() {
+      //select all the lectures from the table where the ID is the ID of this module
+      $query = mysqli_query($this->con, "SELECT id FROM lecture WHERE module='$this->id'");
+      
+      $array = array();
+      
+      while($row = mysqli_fetch_array($query)) {
+        // first item is the array we want to link the lecture videos to, 
+        // the second parameter is the item that we want to push
+        array_push($array, $row['id']);
+      }
+      
+      return $array;
+    }
+    
   }
 ?>

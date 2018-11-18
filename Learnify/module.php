@@ -39,9 +39,17 @@ $lecturer = $module->getLecturer();
 </div>
 
 <div class="lectureContainer">
-  <ul>
-    <li>dog</li>
-    <li>cat</li>
+  <ul class="lectureList">
+    
+    <?php
+    $lectureIdArray = $module->getLectureIds();
+    
+    foreach($lectureIdArray as $lectureId) {
+        echo $lectureId . "<br>";
+    }
+    
+    ?>
+  
   </ul>
 </div>
 
