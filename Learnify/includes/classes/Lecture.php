@@ -14,7 +14,10 @@
 			$this->id = $id;
       
       $query = mysqli_query($this->con, "SELECT * FROM lecture WHERE id='$this->id'");
-      $this->mysqliData = mysql_fetch_array($query);
+      $this->mysqliData = mysqli_fetch_array($query);
+      
+      
+      
       $this->lectureTitle = $this->mysqliData['lectureTitle'];
       $this->moduleId = $this->mysqliData['module'];
       $this->lecturerId = $this->mysqliData['lecturer'];

@@ -44,8 +44,28 @@ $lecturer = $module->getLecturer();
     <?php
     $lectureIdArray = $module->getLectureIds();
     
+    $i=1;
+    // place each lecture ID into the array
     foreach($lectureIdArray as $lectureId) {
-        echo $lectureId . "<br>";
+        
+      $moduleLecture = new Lecture($con, $lectureId);
+      $moduleLecturer = $moduleLecture->getLecturer();
+      
+      echo "<li class='lectureListRow'>
+              <div class='lectureCount'> 
+                <img class='play' src='assets/images/icons/play-white.png'>
+                <span class='lectureNumber'>$i</span>
+              </div>
+              
+              <div class='lectureInfo'> 
+                <span class='lectureTitle'>" . $moduleLecture->getLectureTitle() . "</span>
+                <span class='lecturerName'>" . $moduleLecturer->getName() . "</span>
+              </div>
+              
+            </li>";
+      //increase the lecture count
+      $i++;
+      
     }
     
     ?>
