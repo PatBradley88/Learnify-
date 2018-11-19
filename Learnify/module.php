@@ -62,6 +62,14 @@ $lecturer = $module->getLecturer();
                 <span class='lecturerName'>" . $moduleLecturer->getName() . "</span>
               </div>
               
+              <div class='lectureOptions'>
+                <img class='optionsButton' src='assets/images/icons/more.png'>
+              </div>
+              
+              <div class='lectureDuration'>
+                <span class='duration'>" . $moduleLecture->getDuration() ."</span>
+              </div>
+              
             </li>";
       //increase the lecture count
       $i++;

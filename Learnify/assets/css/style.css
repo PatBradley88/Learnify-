@@ -293,3 +293,84 @@ section that displays along the top of the Module view*/
   font-weight: 200;
 }
 
+
+
+
+/*#######################*/
+/* styling the tracklist */
+/*#######################*/
+.lectureList {
+  padding:0;
+}
+
+.lectureListRow {
+  height:40px;
+  padding:15px 10px;
+  list-style:none;
+}
+
+.lectureListRow span {
+  color:#939393;
+  font-weight: 200;
+}
+
+.lectureListRow:hover {
+  background-color:#282828;
+}
+
+.lectureListRow .lecturecount {
+  width:8%;
+  float:left;
+}
+
+.lectureListRow .lectureCount img {
+  width:20px;
+  visibility:hidden;
+  position:absolute;
+  cursor:pointer;
+}
+
+/*hovering over the row will make the image visible*/
+.lectureListRow:hover .lectureCount img {
+  visibility:visible;
+}
+
+/* hide the lecture list number when you hover over the row*/
+.lectureListRow:hover .lectureCount span {
+  visibility:hidden;
+}
+
+.lectureListRow .lectureInfo {
+  width:75%;
+  float:left;
+}
+
+.lectureListRow .lectureInfo span {
+  display:block;
+}
+
+.lectureListRow .lectureInfo .lectureTitle {
+  color: #fff;
+  margin-bottom:7px;
+}
+
+.lectureListRow .lectureOptions {
+  width:5%;
+  float:left;
+  text-align:right;
+}
+
+.lectureListRow .lectureOptions img {
+  width:15px;
+  visibility:hidden;
+}
+
+.lectureListRow:hover .lectureOptions img {
+  visibility:visible;
+}
+
+.lectureListRow .lectureDuration {
+  width:12%;
+  float:left;
+  text-align:right;
+}
