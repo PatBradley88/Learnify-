@@ -1,5 +1,6 @@
 <?php include("includes/header.php"); 
-  
+ 
+
   if(isset($_GET['id'])) {
     $moduleID = $_GET['id'];
   }
@@ -23,6 +24,8 @@ $lecturer = $module->getLecturer();
 // //get name of lecturer for the module
 // echo $lecturer->getName();
 ?>
+
+
 
 <div class="entityInfo">
    <div class="leftSection">

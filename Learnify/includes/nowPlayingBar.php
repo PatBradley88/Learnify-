@@ -1,3 +1,45 @@
+
+<?php
+//PHP code to add 12 random audio content (lectures) to the playing bar section
+$lectureQuery = mysqli_query($con, "SELECT id FROM lecture ORDER BY RAND() LIMIT 12");
+
+$resultArray = array();
+
+while($row = msqli_fetch_array($lectureQuery)) {
+	array_push($resultArray, $row['id']);
+}
+
+//converting the PHP array into jSon and store it in there to be interpreted by javaScript
+$jsonArray = json_encode($resultArray);
+
+?>
+
+<!-- Script below shows under dev tools the array of 12 elements -->
+<!-- <script>
+	console.log(<?php //echo $jsonArray; ?>);
+</script> -->
+
+
+<!-- script to make currentContent play -->
+<script>
+		
+	//this code will only be executed when everything is ready
+	$(document).ready(function(){
+		currentContenlist = <?php echo $jsonArray; ?>
+		audioElement = new Audio();
+		setTrack(currentContentlist[0], currentContentlist, false);
+
+	});
+
+	function setTrack(lectureId, newContentlist, play){
+
+		audioElement.setTrack("assets/audio/Bonde_Do_Role_-_01_-_Gasolina__Contamida.mp3");
+		audioElement.play();
+	}
+
+
+</script>
+
 <div id="nowPlayingBarContainer">
 	<div id="nowPlayingBar">
 		<div id=nowPlayingLeft>
