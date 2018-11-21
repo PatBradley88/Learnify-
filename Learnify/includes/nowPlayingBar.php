@@ -30,15 +30,52 @@ $jsonArray = json_encode($resultArray);
 
 	});
 
-	function setTrack(lectureId, newContentlist, play){
+	function setTrack(trackId, newContentlist, play){
 
-		audioElement.setTrack("assets/audio/Bonde_Do_Role_-_01_-_Gasolina__Contamida.mp3");
+		// audioElement.setTrack("assets/audio/Bonde_Do_Role_-_01_-_Gasolina__Contamida.mp3");
+
+//Impement Ajax to call databse throught php even after the page is loaded
+		$.post("includes/handlers/ajax/getLectureJson.php", {lectureId: trackId}, function(data){
+			//ajax code to get lecture id -> lecture name to return to the page from database
+			var lectureTrack = JSON.parse(data);
+
+			//code to return the Lecture Track Name from database everytime the song changes 
+			$(".trackName span").text(lectureTrack.lectureTitle)
+
+
+			$.post("includes/handlers/ajax/getLecturerJson.php", {lecturerId: lectureTrack.lecturer}, function(data){
+			//ajax code to get lecturer id -> lecturer name to return to the page from database
+				var lecturerTrack = JSON.parse(data);
+
+				// console.log(lecturerTrack.name);
+
+				$(".artistName span").text(lecturerTrack.name);
+
+			});
+
+			audioElement.setTrack(lectureTrack.path);
+			audioElement.play();
+		})
 
 		if(play == true) {
 			audioElement.play();
 		}
 		
 	}
+
+	function playLecture(){
+		$(".controlButton.play").hide();
+		$(".controlButton.pause").show();
+		audioElement.play();
+	}
+
+	function pauseLecture(){
+		$(".controlButton.play").show();
+		$(".controlButton.pause").hide();
+		audioElement.pause();
+	}
+
+
 
 
 </script>
@@ -55,11 +92,11 @@ $jsonArray = json_encode($resultArray);
 				<div class="trackInfo">
 					
 					<span class="trackName">
-						<span>Team Project Class</span>
+						<span></span>
 					</span>
 
 					<span class="artistName">
-						<span>Year 3</span>
+						<span></span>
 					</span>
 
 				</div>
@@ -81,11 +118,11 @@ $jsonArray = json_encode($resultArray);
 						<img src="assets/images/icons/previous.png" alt="previous">
 					</button>
 
-					<button class="controlButton play" title="Play button">
+					<button class="controlButton play" title="Play button" onclick="playLecture()">
 						<img src="assets/images/icons/play.png" alt="play">
 					</button>
 
-					<button class="controlButton pause" title="Pause play" style="display: none;">
+					<button class="controlButton pause" title="Pause play" style="display: none;" onclick="pauseLecture()">
 						<img src="assets/images/icons/pause.png" alt="pause">
 					</button>
 

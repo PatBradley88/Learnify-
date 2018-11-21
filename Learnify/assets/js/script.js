@@ -20,4 +20,10 @@ function Audio(){
 	this.play = function(){
 		this.audio.play();
 	}
+
+//create a "pause" function
+	this.pause = function(){
+		this.audio.pause();
+	}
+
 }
