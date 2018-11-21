@@ -1,6 +1,6 @@
 //creating a playlist variable
 
-var currentContentlist = array();
+var currentContentlist =[];
 var audioElement;
 
 
@@ -16,4 +16,8 @@ function Audio(){
 		this.audio.src = src;
 	}
 
+//create a "play" function 
+	this.play = function(){
+		this.audio.play();
+	}
 }
