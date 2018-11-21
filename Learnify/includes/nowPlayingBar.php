@@ -46,11 +46,15 @@ $jsonArray = json_encode($resultArray);
 			$.post("includes/handlers/ajax/getLecturerJson.php", {lecturerId: lectureTrack.lecturer}, function(data){
 			//ajax code to get lecturer id -> lecturer name to return to the page from database
 				var lecturerTrack = JSON.parse(data);
-
 				// console.log(lecturerTrack.name);
-
 				$(".artistName span").text(lecturerTrack.name);
+			});
 
+			$.post("includes/handlers/ajax/getModuleJson.php", {moduleId: lectureTrack.module}, function(data){
+			//ajax code to get lecturer id -> lecturer name to return to the page from database
+				var moduleTrack = JSON.parse(data);
+				// console.log(lecturerTrack.name);
+				$(".albumLink img").attr("src", moduleTrack.artworkPath);
 			});
 
 			audioElement.setTrack(lectureTrack.path);
@@ -86,7 +90,7 @@ $jsonArray = json_encode($resultArray);
 
 			<div class="content">
 				<span class="albumLink">
-					<img src="assets/images/icons/music.png" class="albumArtWork">
+					<img class="albumArtWork">
 				</span>
 
 				<div class="trackInfo">
