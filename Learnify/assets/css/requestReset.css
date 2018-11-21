@@ -1,0 +1,116 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#resetBackground {
+  background-color: #000;
+  background-image: url(../images/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+#resetContainer * {
+  color: #fff;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  line-height: 1em;
+  box-sizing: border-box;
+}
+
+#resetContainer {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1024px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+    letter-spacing: 1px;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+   letter-spacing: 1px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+   letter-spacing: 1px;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff;
+   letter-spacing: 1px;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #fff;
+   letter-spacing: 1px;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    #fff;
+   letter-spacing: 1px;
+}
+
+#inputResetContainer{
+  width: 400px;
+  padding: 45px;
+  float: left;
+  border-right: 1px solid #999;
+
+}
+#inputResetContainer h2{
+  text-align: center;
+  letter-spacing: 1px;
+
+}
+
+#inputResetContainer input[type="text"], 
+#inputResetContainer input[type="password"] {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    height: 27px;
+    line-height: 27px;
+    width: 100%;
+}
+
+#inputResetContainer label{
+    color: #a0a0a0;
+    font-size: 13px;
+    margin-top: 15px;
+    display: block;
+    letter-spacing: 2px;
+}
+#inputResetContainer button {
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 250px;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin: 20px auto;
+    height: 41px;
+    width: 100%;
+}
+#inputResetContainer button:hover {
+  cursor:pointer;
+}
+
+#inputResetContainer .errorMessage{
+    color: #07d159;
+    font-size: 12px;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+

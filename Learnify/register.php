@@ -78,7 +78,10 @@
 					<div class="hasAccountText">
 						<span id="hideLogin">Don't have an account? Sign up here.</span>
 					</div>
-
+					<br>
+					<div class="requestReset">
+						<a href="requestReset.php">Forgot Password?</a>
+					</div>
 				</form>
 
 				<form id="registerForm" action="register.php" method="POST">
