@@ -1,7 +1,14 @@
 //creating a playlist variable
 
 var currentContentlist =[];
+var shuffleContentlist =[];
+var tempContentlist =[];
 var audioElement;
+var mouseDown = false;
+var currentIndex = 0;
+var repeat = false;
+var shuffle = false;
+
 
 //formatting the time remaining
 function formatTime(seconds){
@@ -32,7 +39,13 @@ function updateTimeProgressBar(audio){
 
 	//to increase the bar (calculating the percentage of the bar remaining according to the time)
 	var progress = audio.currentTime / audio.duration * 100;
-	$(".progress").css("width", progress + "%");
+	$("playbackBar .progress").css("width", progress + "%");
+}
+
+function updateVolumeProgressBar(audio){
+	//audio.volume is a decimal number between 0 and 1 that is multiplied by 100 to get percentage
+	var volume = audio.volume * 100;
+	$(".volumeBar .progress").css("width", volume + "%");
 }
 
 
@@ -42,6 +55,11 @@ function Audio(){
 
 	this.currentlyPlaying;
 	this.audio = document.createElement('audio');
+
+//EVENT LISTENER to play next lecture when current lecture has ended
+	this.audio.addEventListener("ended", function(){
+		nextLecture();
+	});
 
 //EVENT LISTENER to load the correct time remaining of the lecture track
 	this.audio.addEventListener("canplay", function() {
@@ -58,6 +76,12 @@ function Audio(){
 		}
 	});
 
+//EVENT LISTENER to update the volume bar while song is playing
+
+	this.audio.addEventListener("volumechange", function(){
+		updateVolumeProgressBar(this);
+	});
+
 	this.setTrack = function(src){
 		this.audio.src = src;
 	}
@@ -70,6 +94,12 @@ function Audio(){
 //create a "pause" function
 	this.pause = function(){
 		this.audio.pause();
+	}
+
+//create a "setTime" function
+	this.setTime = function(seconds){
+		//sets current time to be number of seconds passed in
+		this.audio.currentTime = seconds;
 	}
 
 }

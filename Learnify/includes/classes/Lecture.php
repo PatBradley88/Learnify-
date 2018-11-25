@@ -30,6 +30,10 @@
     public function getLectureTitle() {
       return $this->lectureTitle;
     } 
+
+    public function getId() {
+      return $this->id;
+    } 
     
     public function getModule() {
       return new Module($this->con, $this->moduleId);

@@ -56,7 +56,7 @@ $lecturer = $module->getLecturer();
       
       echo "<li class='lectureListRow'>
               <div class='lectureCount'> 
-                <img class='play' src='assets/images/icons/play-white.png'>
+                <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $moduleLecture->getId() ."\", tempContentlist, true)'>
                 <span class='lectureNumber'>$i</span>
               </div>
               
@@ -80,6 +80,13 @@ $lecturer = $module->getLecturer();
     }
     
     ?>
+
+<!--convert php array into json format
+    convert json format into an object to access -->
+    <script>
+      var tempLectureIds = '<?php echo json_encode($lectureIdArray); ?>';
+      tempContentlist = JSON.parse(tempLectureIds);
+    </script>
   
   </ul>
 </div>
