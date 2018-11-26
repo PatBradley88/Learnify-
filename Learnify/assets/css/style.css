@@ -375,10 +375,12 @@ section that displays along the top of the Module view*/
   text-align:right;
 }
 
+/*aligns text on lecturer page*/
 .lecturerInfo{
   text-align: center;
 }
 
+/*styling for play button*/
 .button{
   color: #fff;
   cursor: pointer;
@@ -391,6 +393,13 @@ section that displays along the top of the Module view*/
   min-width: 130px;
 }
 
+/*styling for play button*/
 .button.blue{
   background-color: #2E4E98;
+}
+
+/*horizontal border styling*/
+.borderBottom{
+  border-bottom: 1px solid #939393;
+  margin-bottom: 20px;
 }
