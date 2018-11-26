@@ -227,8 +227,7 @@ $jsonArray = json_encode($resultArray);
 			});
 
 			audioElement.setTrack(lectureTrack.path);
-			audioElement.play();
-		})
+		});
 
 		if(play == true) {
 			audioElement.play();

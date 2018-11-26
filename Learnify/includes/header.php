@@ -7,6 +7,8 @@ include("includes/classes/Lecture.php");
 
 if(isset($_SESSION['userLoggedIn'])){
 	$userLoggedIn = $_SESSION['userLoggedIn'];
+	//access userLoggedIn as a JavaScript variable
+	echo "<script>userLoggedIn = '$userLoggedIn';</script>";
 } else {
 	header("Location: register.php");
 }

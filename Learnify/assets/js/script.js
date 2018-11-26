@@ -8,6 +8,21 @@ var mouseDown = false;
 var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
+var userLoggedIn;
+
+function openPage(url){
+
+	//adds a "?" to the url if it doesn't find one
+	if(url.indexOf("?") == -1){
+		url = url + "?";
+	}
+
+	//translates url by translating characters it doesn't like into characters it does like
+	var encodedUrl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
+	console.log(encodedUrl);
+	$("#mainContent").load(encodedUrl);
+}
+
 
 
 //formatting the time remaining
