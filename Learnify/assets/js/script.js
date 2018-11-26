@@ -19,7 +19,6 @@ function openPage(url){
 
 	//translates url by translating characters it doesn't like into characters it does like
 	var encodedUrl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
-	console.log(encodedUrl);
 	$("#mainContent").load(encodedUrl);
 	//scrolls automatically to the top when we change page
 	$("body").scrollTop(0);
