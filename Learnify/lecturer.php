@@ -37,6 +37,7 @@ $lecturer = new Lecturer($con, $lecturerId);
 
 
 <div class="lectureContainer borderBottom">
+	<h2>LECTURES</h2>
   <ul class="lectureList">
     
     <?php
@@ -88,4 +89,32 @@ $lecturer = new Lecturer($con, $lecturerId);
     </script>
   
   </ul>
+</div>
+
+
+
+<div class="gridViewContainer">
+
+	<h2>MODULES</h2>
+
+	<?php
+		$moduleQuery = mysqli_query($con, "SELECT * FROM modules WHERE lecturer='$lecturerId'");
+		
+		while($row = mysqli_fetch_array($moduleQuery)) {
+		
+			echo "<div class = 'gridViewItem'>
+					<span role='link' tabindex='0' onclick='openPage(\"module.php?id=" . $row['id'] . "\")'>
+						<img src='" . $row['artworkPath'] ."'>
+
+						<div class='gridViewInfo'>"
+
+							. $row['moduleTitle'] .
+
+						"</div>
+					</span>
+				</div>";
+		}
+	?>
+	
+
 </div>
