@@ -66,6 +66,10 @@ function updateVolumeProgressBar(audio){
 	$(".volumeBar .progress").css("width", volume + "%");
 }
 
+function playFirstSong(){
+	setTrack(tempContentlist[0], tempContentlist, true);
+}
+
 
 //this is a function to play the audio in the Module, the content.
 //the object is called AUDIO here, but should be changed to content?!
