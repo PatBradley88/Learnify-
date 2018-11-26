@@ -1,4 +1,5 @@
-<?php include("includes/header.php"); 
+<?php 
+include("includes/includedFiles.php"); 
 
 // this is a comment
 ?>
@@ -28,14 +29,6 @@
 	
 
 </div>
-
-
-
-
-
-
-
-<?php include("includes/footer.php"); ?>
 
 
 
