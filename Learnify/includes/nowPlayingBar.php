@@ -227,12 +227,11 @@ $jsonArray = json_encode($resultArray);
 			});
 
 			audioElement.setTrack(lectureTrack.path);
-		});
 
-		if(play == true) {
-			audioElement.play();
-		}
-		
+			if(play == true) {
+				playLecture();
+			}
+		});
 	}
 
 	function playLecture(){

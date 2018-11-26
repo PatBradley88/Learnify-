@@ -21,6 +21,10 @@ function openPage(url){
 	var encodedUrl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
 	console.log(encodedUrl);
 	$("#mainContent").load(encodedUrl);
+	//scrolls automatically to the top when we change page
+	$("body").scrollTop(0);
+	//puts the url into the history(address bar)
+	history.pushState(null, null, url);
 }
 
 
