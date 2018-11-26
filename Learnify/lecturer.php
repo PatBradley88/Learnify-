@@ -24,7 +24,7 @@ $lecturer = new Lecturer($con, $lecturerId);
 			<h1 class="lecturerName"><?php echo $lecturer->getName() ?></h1>
 
 			<div class="headerButtons">
-				<button class="button">PLAY</button>
+				<button class="button blue">PLAY</button>
 			</div>
 
 		</div>
