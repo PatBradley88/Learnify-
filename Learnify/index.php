@@ -14,7 +14,7 @@ include("includes/includedFiles.php");
 		while($row = mysqli_fetch_array($moduleQuery)) {
 		
 			echo "<div class = 'gridViewItem'>
-					<a href='module.php?id=" . $row['id'] . "'>
+					<span role='link' tabindex='0' onclick='openPage(\"module.php?id=" . $row['id'] . "\")'>
 						<img src='" . $row['artworkPath'] ."'>
 
 						<div class='gridViewInfo'>"
@@ -22,7 +22,7 @@ include("includes/includedFiles.php");
 							. $row['moduleTitle'] .
 
 						"</div>
-					</a>
+					</span>
 				</div>";
 		}
 	?>

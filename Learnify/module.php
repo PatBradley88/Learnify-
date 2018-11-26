@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); 
+<?php include("includes/includedFiles.php");
  
 
   if(isset($_GET['id'])) {
@@ -90,6 +90,3 @@ $lecturer = $module->getLecturer();
   
   </ul>
 </div>
-
-
-<?php include("includes/footer.php"); ?>
