@@ -26,7 +26,12 @@ function openPage(url){
 	history.pushState(null, null, url);
 }
 
-
+//Logout function from settings page
+function logout() {
+	$.post("includes/handlers/ajax/logout.php", function() {
+		location.reload();
+	})
+}
 
 //formatting the time remaining
 function formatTime(seconds){
