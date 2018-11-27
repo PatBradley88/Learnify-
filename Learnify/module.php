@@ -66,7 +66,7 @@ $lecturer = $module->getLecturer();
               </div>
               
               <div class='lectureOptions'>
-                <img class='optionsButton' src='assets/images/icons/more.png'>
+                <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
               </div>
               
               <div class='lectureDuration'>
@@ -90,3 +90,11 @@ $lecturer = $module->getLecturer();
   
   </ul>
 </div>
+
+<!-- creates the menu option when clicking on the "..." -->
+<nav class="optionsMenu">
+  <input type="hidden" name="lectureId">
+  <div class="item">Add to Your Classes</div>
+  <div class="item">View Lecturer</div>
+  <div class="item">View other Classes</div>
+</nav>

@@ -26,7 +26,22 @@ function openPage(url){
 	history.pushState(null, null, url);
 }
 
+//function to make the menu appear beside the "..."
 
+function showOptionsMenu(button){
+	var menu = $(".optionsMenu");
+	var menuWidth = menu.width();
+	//scroll top takes the position (distance) from the top and how far is from the top of the start of the page
+	var scrollTop = $(window).scrollTop();
+	//gets the position of the button from the top of the document
+	var elementOffset = $(button).offset().top;
+	//calculating the position to place the menu
+	var top = elementOffset - scrollTop
+	//calculates the distance from the left
+	var left = $(button).position().left;
+
+	menu.css({"top":top + "px", "left":left - menuWidth +"px", "display":"inline"});
+}
 
 //formatting the time remaining
 function formatTime(seconds){
