@@ -10,6 +10,21 @@ var repeat = false;
 var shuffle = false;
 var userLoggedIn;
 
+//event that hides menu when clicking away
+$(document).click(function(click) {
+	var target = $(click.target);
+
+	//condition to the click
+	if(!target.hasClass("item") && !target.hasClass("optionsButton")) {
+		hideOptionsMenu();
+	}
+});
+
+//event that hides menu on scrowling
+$(window).scroll(function() {
+	hideOptionsMenu();
+});
+
 function openPage(url){
 
 	//adds a "?" to the url if it doesn't find one
@@ -25,6 +40,15 @@ function openPage(url){
 	//puts the url into the history(address bar)
 	history.pushState(null, null, url);
 }
+
+//function to hide the options menu, add to the window.scroll so when scroll disapears
+function hideOptionsMenu(){
+	var menu = $(".optionsMenu");
+	if(menu.css("display") != "none"){
+		menu.css("display", "none");
+	}
+}
+ 
 
 //function to make the menu appear beside the "..."
 
