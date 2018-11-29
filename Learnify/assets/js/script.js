@@ -26,11 +26,29 @@ function openPage(url){
 	history.pushState(null, null, url);
 }
 
+<<<<<<< HEAD
 //Logout function from settings page
 function logout() {
 	$.post("includes/handlers/ajax/logout.php", function() {
 		location.reload();
 	})
+=======
+//function to make the menu appear beside the "..."
+
+function showOptionsMenu(button){
+	var menu = $(".optionsMenu");
+	var menuWidth = menu.width();
+	//scroll top takes the position (distance) from the top and how far is from the top of the start of the page
+	var scrollTop = $(window).scrollTop();
+	//gets the position of the button from the top of the document
+	var elementOffset = $(button).offset().top;
+	//calculating the position to place the menu
+	var top = elementOffset - scrollTop
+	//calculates the distance from the left
+	var left = $(button).position().left;
+
+	menu.css({"top":top + "px", "left":left - menuWidth +"px", "display":"inline"});
+>>>>>>> 9592fd7015fb92342822655c57411569aae92586
 }
 
 //formatting the time remaining

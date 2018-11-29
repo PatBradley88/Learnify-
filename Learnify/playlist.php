@@ -1,35 +1,19 @@
 <?php include("includes/includedFiles.php");
- 
-
   if(isset($_GET['id'])) {
-    $moduleID = $_GET['id'];
+    $playlistID = $_GET['id'];
   }
   else {
     header("Location: index.php");
   }
-
-// you will need to rename the Modules table to be 'modules'
-// $moduleQuery = mysqli_query($con, "SELECT * FROM modules WHERE id='$moduleID'");
-// $module = mysqli_fetch_array($moduleQuery);
-
-// get the ID of the lecturer for the module in the modules table. will return an int.
-// $lecturerId = $module['lecturer'];
-
-$module = new Module($con, $moduleID);
-$lecturer = $module->getLecturer();
-
-// new Lecturer($con, $lecturerId);
-
-// echo $module->getTitle(). "<br>";
-// //get name of lecturer for the module
-// echo $lecturer->getName();
+  $playlist = new Playlist($con, $playlistID);
+  $owner = new User($con, $playlist->getOwner());
 ?>
 
 
 
 <div class="entityInfo">
    <div class="leftSection">
-     <img src="./<?php echo $module->getArtworkPath(); ?>">
+     <img src="assets/images/icons/playlist.png">
     
   </div>
   <div class="rightSection">
@@ -66,7 +50,7 @@ $lecturer = $module->getLecturer();
               </div>
               
               <div class='lectureOptions'>
-                <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
+                <img class='optionsButton' src='assets/images/icons/more.png'>
               </div>
               
               <div class='lectureDuration'>
@@ -90,11 +74,3 @@ $lecturer = $module->getLecturer();
   
   </ul>
 </div>
-
-<!-- creates the menu option when clicking on the "..." -->
-<nav class="optionsMenu">
-  <input type="hidden" name="lectureId">
-  <div class="item">Add to Your Classes</div>
-  <div class="item">View Lecturer</div>
-  <div class="item">View other Classes</div>
-</nav>
