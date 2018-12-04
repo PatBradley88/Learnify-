@@ -94,7 +94,37 @@ $lecturer = $module->getLecturer();
 <!-- creates the menu option when clicking on the "..." -->
 <nav class="optionsMenu">
   <input type="hidden" name="lectureId">
-  <div class="item">Add to Your Classes</div>
+
+<!-- ########################################################## -->
+<!-- this will eventually go to a PLAYLIST class -->
+<!-- 
+
+public static function getPlayListsDropdown($con, $username){
+
+$dropdown = ' <select class="item playlist">
+                  <option value="">Add to Your Classes</option>';
+
+                  $query = mysqli_query($con, "SELECT id, name FROM playlists WHERE owner='$username'");      
+
+                  while($row = mysqli_fetch_array($query)){
+                    $id = $row['id'];
+                    $name = $row['name'];
+
+                    $dropdown = $dropdown . "<option value='$id'>$name</option>";
+                  }
+
+    return $dropdown ."</select>";
+}
+
+ -->
+
+<!-- 
+  <?php // echo Playlist::getPlayListsDropdown($con, $userLogedIn->getUsername()); ?>
+ -->
+ <!-- ########################################################## -->
+
+
   <div class="item">View Lecturer</div>
   <div class="item">View other Classes</div>
+
 </nav>
