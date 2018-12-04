@@ -8,6 +8,10 @@
 			$this->con = $con;
 			$this->id = $id;
 		}
+
+    public function getId() {
+      return $this->id;
+    }
     
     // function to retrieve the lecturer's name
     // pass ID into the sql Query to artists table.

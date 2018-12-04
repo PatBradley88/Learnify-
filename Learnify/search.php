@@ -18,6 +18,7 @@ else {
 
 <script>
 
+
 $(".searchInput").focus();
 	
 $(function() {
@@ -34,6 +35,8 @@ $(function() {
 })
 
 </script>
+
+<?php if($term == "") exit(); ?>
 
 
 <div class="lectureContainer borderBottom">
@@ -98,3 +101,79 @@ $(function() {
   
   </ul>
 </div>
+
+
+<div class="lecturersContainer borderBottom">
+  
+    <h2>LECTURERS</h2>
+
+    <?php
+    $lecturerQuery = mysqli_query($con, "SELECT id FROM lecturers WHERE name LIKE '$term%' LIMIT 10");
+
+    if(mysqli_num_rows($lecturerQuery) == 0) {
+      echo "<span class='noresults'>No lecturers found matching " . $term . "</span>";
+    }
+
+    while($row = mysqli_fetch_array($lecturerQuery)) {
+      $lecturerFound = new Lecturer($con, $row['id']);
+
+      echo "<div class='searchResultRow'>
+                <div class='lecturerName'>
+
+                    <span role='link' tabindex='0' onclick'openPage(\"lecturer.php?id=" . $lecturerFound->getId() ."\")'>
+                      "
+                      .$lecturerFound->getName() .
+                      "
+                    </span>
+
+                </div>
+            </div>";
+
+    }
+
+    ?>
+
+
+</div>
+
+
+<div class="gridViewContainer">
+
+  <h2>MODULES</h2>
+
+  <?php
+    $moduleQuery = mysqli_query($con, "SELECT * FROM modules WHERE lectureTitle LIKE '$term%' LIMIT 10");
+
+    if(mysqli_num_rows($moduleQuery) == 0) {
+        echo "<span class='noResults'>No modules found matching " . $term . "</span>";
+    }
+
+    while($row = mysqli_fetch_array($moduleQuery)) {
+    
+      echo "<div class = 'gridViewItem'>
+          <span role='link' tabindex='0' onclick='openPage(\"module.php?id=" . $row['id'] . "\")'>
+            <img src='" . $row['artworkPath'] ."'>
+
+            <div class='gridViewInfo'>"
+
+              . $row['moduleTitle'] .
+
+            "</div>
+          </span>
+        </div>";
+    }
+  ?>
+  
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

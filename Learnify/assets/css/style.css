@@ -405,7 +405,8 @@ section that displays along the top of the Module view*/
 }
 
 .lectureContainer h2,
-.gridViewContainer h2{
+.gridViewContainer h2,
+.lecturersContainer h2 {
   text-align: center;
 }
 
@@ -442,7 +443,22 @@ input:focus {
   outline: none;
 }
 
+.searchResultRow {
+  padding: 15px 10px;
+}
 
+.searchResultRow:hover {
+  background-color: #282828;
+}
+
+.searchResultRow .lecturerName span {
+  color: #fff;
+}
+
+.noResults {
+  margin: 15px;
+  display: block;
+}
 
 
 

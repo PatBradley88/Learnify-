@@ -216,16 +216,16 @@ $jsonArray = json_encode($resultArray);
 			//ajax code to get lecturer id -> lecturer name to return to the page from database
 				var lecturer = JSON.parse(data);
 				// console.log(lecturerTrack.name);
-				$(".lecturerName span").text(lecturer.name);
-				$(".lecturerName span").attr("onclick", "openPage('lecturer.php?id=" + lecturer.id + "')");
+				$(".lectureInfo .lecturerName span").text(lecturer.name);
+				$(".lectureInfo .lecturerName span").attr("onclick", "openPage('lecturer.php?id=" + lecturer.id + "')");
 			});
 
 			$.post("includes/handlers/ajax/getModuleJson.php", {moduleId: lectureTrack.module}, function(data){
 			//ajax code to get lecturer id -> lecturer name to return to the page from database
 				var moduleTrack = JSON.parse(data);
 				// console.log(lecturerTrack.name);
-				$(".moduleLink img").attr("src", moduleTrack.artworkPath);
-				$(".moduleName img").attr("onclick", "openPage('module.php?id=" + module.id + "')");
+				$(".content .moduleLink img").attr("src", moduleTrack.artworkPath);
+				$(".content .moduleName img").attr("onclick", "openPage('module.php?id=" + module.id + "')");
 				$(".trackName span").attr("onclick", "openPage('module.php?id=" + module.id + "')");
 			});
 
