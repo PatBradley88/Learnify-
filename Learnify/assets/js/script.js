@@ -41,15 +41,15 @@ function openPage(url){
 	history.pushState(null, null, url);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-//Logout function from settings page
-function logout() {
-	$.post("includes/handlers/ajax/logout.php", function() {
-		location.reload();
-	})
-=======
-=======
+// <<<<<<< HEAD
+// <<<<<<< HEAD
+// //Logout function from settings page
+// function logout() {
+// 	$.post("includes/handlers/ajax/logout.php", function() {
+// 		location.reload();
+// 	})
+// =======
+// =======
 //function to hide the options menu, add to the window.scroll so when scroll disapears
 function hideOptionsMenu(){
 	var menu = $(".optionsMenu");
@@ -59,8 +59,8 @@ function hideOptionsMenu(){
 }
  
 
->>>>>>> cae6cccb260c4824604bd3465fcd5c5f970f14f3
-//function to make the menu appear beside the "..."
+// >>>>>>> cae6cccb260c4824604bd3465fcd5c5f970f14f3
+// //function to make the menu appear beside the "..."
 
 function showOptionsMenu(button){
 	var menu = $(".optionsMenu");
@@ -75,7 +75,7 @@ function showOptionsMenu(button){
 	var left = $(button).position().left;
 
 	menu.css({"top":top + "px", "left":left - menuWidth +"px", "display":"inline"});
->>>>>>> 9592fd7015fb92342822655c57411569aae92586
+// >>>>>>> 9592fd7015fb92342822655c57411569aae92586
 }
 
 //formatting the time remaining
