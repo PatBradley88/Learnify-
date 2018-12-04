@@ -41,7 +41,7 @@ function openPage(url){
 	history.pushState(null, null, url);
 }
 
-// <<<<<<< HEAD
+
 // <<<<<<< HEAD
 // //Logout function from settings page
 // function logout() {
