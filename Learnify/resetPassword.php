@@ -35,6 +35,7 @@ if(isset($_POST["password"])) {
 <html>
 <head>
 	<title></title>
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
 		<link rel="stylesheet" type="text/css" href="assets/css/requestReset.css">
 

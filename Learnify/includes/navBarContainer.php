@@ -23,8 +23,8 @@
           <span role="link" tabindex="0" onclick="openPage('yourClasses.php')" class="navItemLink"> Your Classes </span>
         </div>
         <div class="navItem">
-          <span role="link" tabindex="0" onclick="openPage('settings.php')" class="navItemLink">
-            <?php echo $userLoggedIn->getFirstAndLastName();?>
+          <span role="link" tabindex="0" onclick="openPage('settings.php')" class="navItemLink"> Profile
+            <!-- <?php echo $userLoggedIn->getFirstAndLastName;?> -->
             </span>
         </div>
         
