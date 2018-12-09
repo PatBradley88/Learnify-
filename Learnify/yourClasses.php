@@ -14,6 +14,7 @@ include("includes/includedFiles.php");
 
 		<?php
 			$username = $userLoggedIn->getUsername();
+      echo "<p>" . $username . "</p>";
 
 		    $contentlistQuery = mysqli_query($con, "SELECT * FROM contentlists WHERE owner='$username'");
 
