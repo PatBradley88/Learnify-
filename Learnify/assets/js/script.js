@@ -9,6 +9,7 @@ var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
 var userLoggedIn;
+var timer;
 
 //event that hides menu when clicking away
 $(document).click(function(click) {
@@ -26,6 +27,10 @@ $(window).scroll(function() {
 });
 
 function openPage(url){
+
+	if(timer != null) {
+		clearTimeout(timer);
+	}
 
 	//adds a "?" to the url if it doesn't find one
 	if(url.indexOf("?") == -1){

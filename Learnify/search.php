@@ -22,7 +22,7 @@ else {
 $(".searchInput").focus();
 	
 $(function() {
-	var timer;
+	
 
 	$(".searchInput").keyup(function() {
 		clearTimeout(timer);
@@ -142,7 +142,7 @@ $(function() {
   <h2>MODULES</h2>
 
   <?php
-    $moduleQuery = mysqli_query($con, "SELECT * FROM modules WHERE lectureTitle LIKE '$term%' LIMIT 10");
+    $moduleQuery = mysqli_query($con, "SELECT * FROM modules WHERE moduleTitle LIKE '$term%' LIMIT 10");
 
     if(mysqli_num_rows($moduleQuery) == 0) {
         echo "<span class='noResults'>No modules found matching " . $term . "</span>";
