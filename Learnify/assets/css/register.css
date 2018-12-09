@@ -2,6 +2,7 @@ html, body{
 	padding: 0;
 	margin: 0;
 	height: 100%;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 #background {
@@ -16,7 +17,8 @@ html, body{
 
 #loginContainer * {
 	color: #fff;
-		font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  /*color: #66bcff;*/
+	font-family: 'Ubuntu', sans-serif;
 	font-weight: normal;
 	line-height: 1em;
 	box-sizing: border-box;
@@ -26,7 +28,8 @@ html, body{
 	width: 80%;
 	margin: 0 auto;
 	position: relative;
-	max-width: 1024px;
+	/*max-width: 1024px;*/
+  max-width: 2024px;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -85,7 +88,7 @@ html, body{
 
 #inputContainer label{
     color: #a0a0a0;
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 15px;
     display: block;
     letter-spacing: 2px;
@@ -108,13 +111,17 @@ html, body{
 }
 
 #inputContainer .errorMessage{
-    color: #07d159;
-    font-size: 12px;
+    /*color: #07d159;*/
+    color: #66bcff;
+    font-size: 14px;
     display: block;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
+#inputContainer .requestReset a {
+  color: #C9DFFF;
+}
 
 .hasAccountText span {
     font-weight: bold;
@@ -146,7 +153,8 @@ html, body{
 }
 
 #loginText h1{
-    color: #07d159;
+    /*color: #07d159;*/
+    color: #66bcff;
     font-size: 60px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -165,7 +173,7 @@ html, body{
 #loginText li{
     font-size: 18px;
     list-style-type: none;
-    padding: 5px 30px;
+    padding: 11px 37px;
     background: url(../images/icons/checkmark.png) no-repeat;
     letter-spacing: 1px;
 }
