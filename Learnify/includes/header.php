@@ -1,14 +1,17 @@
 <?php 
 include("includes/config.php");
+include("includes/classes/User.php");
 include("includes/classes/Lecturer.php");
 include("includes/classes/Module.php");
 include("includes/classes/Lecture.php");
+include("includes/classes/Contentlist.php");
 //session_destroy();
 
 if(isset($_SESSION['userLoggedIn'])){
-	$userLoggedIn = $_SESSION['userLoggedIn'];
+	$userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
+	$username = $userLoggedIn->getUsername();
 	//access userLoggedIn as a JavaScript variable
-	echo "<script>userLoggedIn = '$userLoggedIn';</script>";
+	echo "<script>userLoggedIn = '$username';</script>";
 } else {
 	header("Location: register.php");
 }

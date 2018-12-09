@@ -47,14 +47,14 @@ function openPage(url){
 }
 
 
-// <<<<<<< HEAD
-// //Logout function from settings page
-// function logout() {
-// 	$.post("includes/handlers/ajax/logout.php", function() {
-// 		location.reload();
-// 	})
-// =======
-// =======
+//Logout function from settings page
+function logout() {
+$.post("includes/handlers/ajax/logout.php", function() {
+ 		location.reload();
+ 	});
+}
+ 
+ 
 //function to hide the options menu, add to the window.scroll so when scroll disapears
 function hideOptionsMenu(){
 	var menu = $(".optionsMenu");

@@ -410,7 +410,7 @@ section that displays along the top of the Module view*/
   text-align: center;
 }
 
-<<<<<<< HEAD
+
 .userInfo h1 {
   text-align: center;
 }
@@ -462,7 +462,7 @@ input:focus {
 
 
 
-=======
+
 .optionsMenu{
      position: fixed;
     background-color: #282828;
@@ -493,5 +493,9 @@ input:focus {
   padding: 10px;
 }
 
+.userInfo h1 {
+  text-align: center;
+}
 
->>>>>>> 9592fd7015fb92342822655c57411569aae92586
+
+
