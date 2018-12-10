@@ -1,22 +1,22 @@
 <?php include("includes/includedFiles.php");
   if(isset($_GET['id'])) {
-    $playlistID = $_GET['id'];
+    $contentlistID = $_GET['id'];
   }
   else {
     header("Location: index.php"); 
   }
-  $playlist = new Playlist($con, $playlistID); //Video 144 06m00s -> end there is cover on how to get this information correctly
+  // creates the contentlist object
+  $contentlist = new Contentlist($con, $contentlistID); //Video 144 06m00s -> end there is cover on how to get this information correctly
     // if(!is_array($data)) {
       // data is an id (string)
       // $query = mysqli_query($con, "SELECT * FROM playlists WHERE id='$data'");
       // $data = msqyli_fetch_array($query);
-    }
-  $owner = new User($con, $playlist->getOwner()); # we want to get the name of the user that created the playlist
+
+  //creates the contenlist owner object
+  $owner = new User($con, $contentlist->getOwner()); # we want to get the name of the user that created the playlist
                                                   # so we get this from the playlist class because it's not
                                                   # always going to be the current user logged in
-
-
-?>
+  ?>
 
 
 <div class="entityInfo">
@@ -28,9 +28,9 @@
     
   </div>
   <div class="rightSection">
-    <h2><?php echo $playlist->getName(); ?></h2>
-    <p>By <?php echo $playlist->getOwner(); ?></p>
-    <p><?php echo $playlist->getVideoCount(); ?> videos</p>
+    <h2><?php echo $contentlist->getName(); ?></h2>
+    <p>By <?php echo $contentlist->getOwner(); ?></p>
+    <p><?php echo $contentlist->getNumberOfVideos(); ?> videos</p>
     <!-- function for the Playlist.php class to get video count 
     
     public function getNumberOfVideos() {
@@ -56,17 +56,17 @@
       // changed all moduleLecture to playlistLecture (lines 56, 61, 66, 75)
       // changed all moduleLecturer to lectureLecturer (lines 57 and 67)
         
-      $playlistLecture = new Lecture($con, $lectureId);
-      $lectureLecturer = $playlistLecture->getLecturer();
+      $contentlistLecture = new Lecture($con, $lectureId);
+      $lectureLecturer = $contentlistLecture->getLecturer();
       
       echo "<li class='lectureListRow'>
               <div class='lectureCount'> 
-                <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $playlistLecture->getId() ."\", tempContentlist, true)'>
+                <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $contentlistLecture->getId() ."\", tempContentlist, true)'>
                 <span class='lectureNumber'>$i</span>
               </div>
               
               <div class='lectureInfo'> 
-                <span class='lectureTitle'>" . $playlistLecture->getLectureTitle() . "</span>
+                <span class='lectureTitle'>" . $contentlistLecture->getLectureTitle() . "</span>
                 <span class='lecturerName'>" . $lectureLecturer->getName() . "</span>
               </div>
               
@@ -75,7 +75,7 @@
               </div>
               
               <div class='lectureDuration'>
-                <span class='duration'>" . $playlistLecture->getDuration() ."</span>
+                <span class='duration'>" . $contentlistLecture->getDuration() ."</span>
               </div>
               
             </li>";

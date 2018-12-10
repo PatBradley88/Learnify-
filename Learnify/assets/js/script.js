@@ -47,6 +47,7 @@ function openPage(url){
 }
 
 
+<<<<<<< HEAD
 // <<<<<<< HEAD
 // //Logout function from settings page
 // function logout() {
@@ -55,6 +56,41 @@ function openPage(url){
 // 	})
 // =======
 // =======
+=======
+function updateEmail(emailClass) {
+	var emailValue = $("." + emailClass).val();
+
+	$.post("includes/handlers/ajax/updateEmail.php", { email: emailValue, username: userLoggedIn})
+	.done(function(response) {
+		$("." +emailClass).nextAll(".message").text(response);
+	})
+}
+
+function updatePassword(oldPasswordClass, newPasswordClass1, newPasswordClass2) {
+	var oldPassword = $("." + oldPasswordClass).val();
+	var newPassword1 = $("." + newPasswordClass1).val();
+	var newPassword2 = $("." + newPasswordClass2).val();
+
+	$.post("includes/handlers/ajax/updatePassword.php", { oldPassword: oldPassword, 
+		newPassword1: newPassword1, 
+		newPassword2: newPassword2, 
+		username: userLoggedIn})
+
+	.done(function(response) {
+		$("." +oldPasswordClass).nextAll(".message").text(response);
+	})
+}
+
+
+//Logout function from settings page
+function logout() {
+$.post("includes/handlers/ajax/logout.php", function() {
+ 		location.reload();
+ 	});
+}
+ 
+ 
+>>>>>>> ad82c1cd4341334a78d79ee027d6969fc1ca5468
 //function to hide the options menu, add to the window.scroll so when scroll disapears
 function hideOptionsMenu(){
 	var menu = $(".optionsMenu");
