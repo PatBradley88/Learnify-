@@ -88,7 +88,6 @@ function hideOptionsMenu(){
 }
  
 
-// >>>>>>> cae6cccb260c4824604bd3465fcd5c5f970f14f3
 // //function to make the menu appear beside the "..."
 
 function showOptionsMenu(button){
