@@ -46,17 +46,6 @@ function openPage(url){
 	history.pushState(null, null, url);
 }
 
-
-<<<<<<< HEAD
-// <<<<<<< HEAD
-// //Logout function from settings page
-// function logout() {
-// 	$.post("includes/handlers/ajax/logout.php", function() {
-// 		location.reload();
-// 	})
-// =======
-// =======
-=======
 function updateEmail(emailClass) {
 	var emailValue = $("." + emailClass).val();
 
@@ -90,7 +79,6 @@ $.post("includes/handlers/ajax/logout.php", function() {
 }
  
  
->>>>>>> ad82c1cd4341334a78d79ee027d6969fc1ca5468
 //function to hide the options menu, add to the window.scroll so when scroll disapears
 function hideOptionsMenu(){
 	var menu = $(".optionsMenu");

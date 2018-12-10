@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-HELLO!
-=======
 <?php
 include("includes/includedFiles.php");
 ?>
@@ -24,4 +21,3 @@ include("includes/includedFiles.php");
 	</div>
 
 </div>
->>>>>>> ad82c1cd4341334a78d79ee027d6969fc1ca5468
