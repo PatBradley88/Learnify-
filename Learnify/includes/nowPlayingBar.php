@@ -207,7 +207,7 @@ $jsonArray = json_encode($resultArray);
 
 			//ajax code to get lecture id -> lecture name to return to the page from database
 			var lectureTrack = JSON.parse(data);
-
+//       console.log(lectureTrack);
 			//code to return the Lecture Track Name from database everytime the song changes 
 			$(".trackName span").text(lectureTrack.lectureTitle)
 
@@ -215,7 +215,7 @@ $jsonArray = json_encode($resultArray);
 			$.post("includes/handlers/ajax/getLecturerJson.php", {lecturerId: lectureTrack.lecturer}, function(data){
 			//ajax code to get lecturer id -> lecturer name to return to the page from database
 				var lecturer = JSON.parse(data);
-				// console.log(lecturerTrack.name);
+// 				console.log(lecturerTrack.name);
 				$(".lectureInfo .lecturerName span").text(lecturer.name);
 				$(".lectureInfo .lecturerName span").attr("onclick", "openPage('lecturer.php?id=" + lecturer.id + "')");
 			});
@@ -223,7 +223,7 @@ $jsonArray = json_encode($resultArray);
 			$.post("includes/handlers/ajax/getModuleJson.php", {moduleId: lectureTrack.module}, function(data){
 			//ajax code to get lecturer id -> lecturer name to return to the page from database
 				var moduleTrack = JSON.parse(data);
-				// console.log(lecturerTrack.name);
+				console.log(moduleTrack.artworkPath);
 				$(".content .moduleLink img").attr("src", moduleTrack.artworkPath);
 				$(".content .moduleName img").attr("onclick", "openPage('module.php?id=" + module.id + "')");
 				$(".trackName span").attr("onclick", "openPage('module.php?id=" + module.id + "')");
@@ -259,17 +259,17 @@ $jsonArray = json_encode($resultArray);
 		<div id=nowPlayingLeft>
 
 			<div class="content">
-				<span class="albumLink">
+				<span class="moduleLink">
 					<img role="link" tabindex="0" src="" class="albumArtWork">
 				</span>
 
-				<div class="trackInfo">
+				<div class="lectureInfo">
 					
 					<span class="trackName">
 						<span role="link" tabindex="0"></span>
-					</span>
+					</span> 
 
-					<span class="artistName">
+					<span class="lecturerName">
 						<span role="link" tabindex="0"></span>
 					</span>
 
