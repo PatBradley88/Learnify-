@@ -268,6 +268,7 @@ $jsonArray = json_encode($resultArray);
 					<span class="trackName">
 						<span role="link" tabindex="0"></span>
 					</span> 
+          <br>
 
 					<span class="lecturerName">
 						<span role="link" tabindex="0"></span>
